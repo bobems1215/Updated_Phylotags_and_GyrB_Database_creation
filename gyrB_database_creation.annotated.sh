@@ -5,8 +5,12 @@
 #PBS -l pvmem=18gb 
 #PBS -o log.txt 
 #PBS -A exd44_a_g_sc_default
+#Above are the PBS parameters used to run this command 
 
+#This is needed to load extra packages hosted in my local directory
 export PATH="$PATH:/gpfs/group/exd44/default/rgn5011/.local/bin/"
+
+#This is used to navigate to the folder where the GYRB database is downloaded
 cd /gpfs/group/exd44/default/rgn5011/NCBI_files
 
 conda activate NCBI
