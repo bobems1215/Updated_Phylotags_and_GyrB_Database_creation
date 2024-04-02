@@ -1,0 +1,43 @@
+name: phylotags_env
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=2_gnu
+  - appdirs=1.4.4=pyh9f0ad1d_0
+  - ca-certificates=2024.2.2=hbcca054_0
+  - certifi=2016.9.26=py36_0
+  - clustalw=2.1=h4ac6f70_10
+  - entrez-direct=21.6=he881be0_0
+  - gettext=0.21.1=h27087fc_0
+  - gffread=0.12.7=hdcf5f25_4
+  - ld_impl_linux-64=2.40=h41732ed_0
+  - libffi=3.4.2=h7f98852_5
+  - libgcc-ng=13.2.0=h807b86a_5
+  - libgomp=13.2.0=h807b86a_5
+  - libidn2=2.3.7=hd590300_0
+  - libnsl=2.0.1=hd590300_0
+  - libsqlite=3.45.2=h2797004_0
+  - libstdcxx-ng=13.2.0=h7e041cc_5
+  - libunistring=0.9.10=h7f98852_0
+  - libzlib=1.2.13=hd590300_5
+  - ncbi-genome-download=0.3.3=pyh7cba7a3_0
+  - ncurses=6.4.20240210=h59595ed_0
+  - openssl=1.1.1w=hd590300_0
+  - pip=20.0.2=py36_1
+  - python=3.6.15=hb7a2778_0_cpython
+  - python_abi=3.6=2_cp36m
+  - readline=8.2=h8228510_1
+  - requests=2.12.5=py36_0
+  - seqtk=1.4=he4a0461_1
+  - setuptools=49.6.0=py36h5fab9bb_3
+  - sqlite=3.45.2=h2c6b66d_0
+  - tk=8.6.13=noxft_h4845f30_101
+  - tqdm=4.7.2=py36_0
+  - wget=1.21.4=h91b91d3_1
+  - wheel=0.34.2=py36_0
+  - xz=5.2.6=h166bdaf_0
+  - zlib=1.2.13=hd590300_5
+prefix: /storage/home/rgn5011/.conda/envs/phylotags_env
