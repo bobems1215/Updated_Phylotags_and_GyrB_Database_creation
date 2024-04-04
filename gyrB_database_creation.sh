@@ -10,6 +10,14 @@
 #SBATCH --account=one
 #Above are the SLURM parameters used to run this command 
 
+#Create a conda environment from the NCBI.yml file. Note that this only needs to be run once and for subsequent scripts we will assume the conda environment has been created.
+module load anaconda
+conda env create -f phylotags.yml
+conda activate phylotags_env
+
+#In this conda enviornment we use the seqtk, ncbi-genome-download, entrez-direct, gffread, clustalw, and perl packages
+#conda activate phylotags_env
+
 #We first want to make a directory to download all the NCBI files
 mkdir NCBI_files
 cd NCBI_files
@@ -21,14 +29,6 @@ mkdir 16S
 #Finally we need to make two text files used to pull out the GyrB and 16S sequences
 echo 'gene=gyrB' > interest1.txt 
 echo 'product=16S ribosomal RNA' > interest2.txt
-
-#Create a conda environment from the NCBI.yml file. Note that this only needs to be run once and for subsequent scripts we will assume the conda environment has been created.
-module load anaconda
-conda env create -f phylotags.yml
-conda activate phylotags_env
-
-#In this conda enviornment we use the seqtk, ncbi-genome-download, entrez-direct, gffread, clustalw, and perl packages
-#conda activate phylotags_env
 
 #We download all current complete bacterial genomes in fasta, gfff, and ran-fasta format from the NCBI. 
 ncbi-genome-download --assembly-levels complete -F fasta,gff,rna-fasta bacteria
