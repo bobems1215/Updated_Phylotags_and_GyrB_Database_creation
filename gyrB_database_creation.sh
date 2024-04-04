@@ -23,8 +23,8 @@ echo 'gene=gyrB' > interest1.txt
 echo 'product=16S ribosomal RNA' > interest2.txt
 
 #Create a conda environment from the NCBI.yml file. Note that this only needs to be run once and for subsequent scripts we will assume the conda environment has been created.
-#conda env create -f phylotags.yml
 module load anaconda
+conda env create -f phylotags.yml
 conda activate phylotags_env
 
 #In this conda enviornment we use the seqtk, ncbi-genome-download, entrez-direct, gffread, clustalw, and perl packages
