@@ -39,8 +39,8 @@ cat NC_Tax.txt | grep  -A 2 "Bifidobacterium"  > bifido_ref.txt
 #Run Phylotags. IDhigh should always be 100 because this will include identical species. IDlow is used to determine how specific the primers will be, the higher idlow is, the more specific the primers will be. For the purposes of this experiment idlow values ranged from 95 to 92
 #specific run parameters are noted in the manuscript 
 
-perl ../01_phyloTAGs_align.pl -in gyr_refseq.fa -distance 16S_rDNA_id_cust.txt -reference NC_008618 -idlow 95 -idhigh 100
-perl ../02_phyloTAGs_primer.pl -in aligned_by_codons.fas -format fasta -codons 7 -consensus 90 -greedy
+perl PhyloTAGs_package/01_phyloTAGs_align.pl -in gyr_refseq.fa -distance 16S_rDNA_id_cust.txt -reference NC_008618 -idlow 95 -idhigh 100
+perl PhyloTAGs_package/02_phyloTAGs_primer.pl -in aligned_by_codons.fas -format fasta -codons 7 -consensus 90 -greedy
 
 #This will export a file called phyloTAGs_primers_table.txt which can be copy and pasted into excel to pick primers at low degeneracy sites 
 
