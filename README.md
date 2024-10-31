@@ -27,6 +27,6 @@ In one of our analyses, we create trimmed PacBio reads using the original Moelle
 The _GyrB_dada2_analysis.rmd_ script can be used to analyze all sequenced reads and psuedo_MiSeq reads with the DADA2 pipeline. 
 
 ## Rarefying sequencing data to 28,000 reads.
-In order to create Supplemental Table 2 we rarified the PacBio and Illumina sequencing results for Bacteroidaceae, Bifidobacteriaceae, and Lachnospiraceae to 28,000 reads. The bash script _rarify.reads.sh_ was used to rarify the sequencing data. The resulting reads can be used with the _GyrB_dada2_analysis.rmd_ script to analyze all rarified reads.
+In order to create **Supplemental Table 2** we rarified the Bacteroidaceae, Bifidobacteriaceae, and Lachnospiraceae PacBio and Illumina sequencing results to 28,000 reads. The bash script _rarify.reads.sh_ was used to rarify the sequencing data. The resulting reads can be used with the _GyrB_dada2_analysis.rmd_ script to analyze all rarified reads.
 
 
