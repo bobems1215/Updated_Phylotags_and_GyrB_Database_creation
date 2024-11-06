@@ -83,25 +83,32 @@ mv *fastq ./raw
 #move to the rarified folder and create folders for each specific primer pair and sequencign technology. Then move the appropriate reads into each folder
 
 cd rare
-mkdir Bac_PacBio
-mkdir Bif_PacBio
-mkdir Lac_PacBio
-mkdir 16S_PacBio
 
-mkdir Bac_MiSeq
-mkdir Bif_MiSeq
-mkdir Lac_MiSeq
-mkdir 16S_MiSeq
+mkdir PacBio
+cd PacBio
+mkdir Bac
+mkdir Bif
+mkdir Lac
+mkdir 16S
+cd ..
 
-mv *Bac_pac* ./Bac_PacBio
-mv *Bif_pac* ./Bif_PacBio
-mv *Lac_pac* ./Lac_PacBio
-mv *16S_pac* ./16S_PacBio
+mkdir MiSeq
+cd MiSeq
+mkdir Bac
+mkdir Bif
+mkdir Lac
+mkdir 16S
+cd ..
 
-mv *Bac_miseq* ./Bac_MiSeq
-mv *Bif_miseq* ./Bif_MiSeq
-mv *Lac_miseq* ./Lac_MiSeq
-mv *16S_miseq* ./16S_MiSeq
+mv *Bac_pac* ./PacBio/Bac
+mv *Bif_pac* ./PacBio/Bif
+mv *Lac_pac* ./PacBio/Lac
+mv *16S_pac* ./PacBio/16S
+
+mv *Bac_miseq* ./MiSeq/Bac
+mv *Bif_miseq* ./MiSeq/Bif
+mv *Lac_miseq* ./MiSeq/Lac
+mv *16S_miseq* ./MiSeq/16S
 
 #After this the rare folder can be used as the input folder for the GyrB_dada2_analysis.RMD file to analyze the rarified reads.
 
