@@ -15,7 +15,7 @@ module load anaconda
 conda activate phylotags_env
 
 #Make a folder for the raw sequencing data 
-cd /storage/group/exd44/default/rgn5011/NCBI_files/no_path_test/test_down
+cd NCBI_files
 mkdir GyrB_Sequencing_data
 cd GyrB_Sequencing_data
 
