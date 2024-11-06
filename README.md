@@ -20,12 +20,13 @@ Please note that the Phylotags script, _01_phyloTAGs_align.pl_, requires the pat
 ## Download a Separate Database to Check For Potential Off-target Amplification
 The _Human_Microbiome_db_download.sh_ script is used to download the Human_Microbiom database on the NCBI found [here](https://ftp.ncbi.nlm.nih.gov/genomes/HUMAN_MICROBIOM/Bacteria). This script sets up the database to be used for _in silico_ PCR to check the chosen primers for off-target amplifications. The _in_silico_pcr.sh_ script uses the usearch program to run _in silico_ pcr with the chosen primers on the Human_Microbiom NCBI database. This technique was also used to fine-tune the 'idlow' value for phylotags. The primer sets that resulted in the longest read with the fewest off-target amplifications were chosen to be used for sequencing.   
 
+## Downloading the raw sequencing reads and Rarefying sequencing data to 28,000 reads.
+Please use the _rarify.reads.sh_ script to download the raw sequencing data from the NCBI. Additionally, in order to create **Supplemental Table 2** we rarified the Bacteroidaceae, Bifidobacteriaceae, and Lachnospiraceae PacBio and Illumina sequencing results to 28,000 reads. The bash script _rarify.reads.sh_ was used to rarify the sequencing data. The resulting reads can be used with the _GyrB_dada2_analysis.rmd_ script to analyze all rarified reads.
+
 ## Create Pseudo Miseq reads from the PacBio data
-In one of our analyses, we create trimmed PacBio reads using the original Moeller primers, we call these Pseudo Miseq reads. This involves using in silico PCR and the ampoutq flag to get fastq output data. The _psuedo_Miseq_creation.sh_ script includes our own file names so these will need to be replaced. Additionally, this script assumes that the raw PacBio data has been placed in a folder called _Pacbio_data_ in the _NCBI_Scripts_ directory.  
+Please make sure to run _rarify.reads.sh_ first to download the raw sequencing data from the NCBI. In one of our analyses, we create trimmed PacBio reads using the original Moeller primers, we call these Pseudo Miseq reads. This involves using in silico PCR and the ampoutq flag to get fastq output data. The _psuedo_Miseq_creation.sh_ script will create these trimmed PacBio reads from raw sequence reads downloaded from _rarify.reads.sh_.  
 
 ## Analyze the Sequencing Results with Dada2.
-The _GyrB_dada2_analysis.rmd_ script can be used to analyze all sequenced reads and psuedo_MiSeq reads with the DADA2 pipeline. 
+The _GyrB_dada2_analysis.rmd_ script can be used to analyze all sequenced reads and psuedo_MiSeq reads with the DADA2 pipeline. All raw data can be downloaded with the _rarify.reads.sh_ script.
 
-## Rarefying sequencing data to 28,000 reads.
-In order to create **Supplemental Table 2** we rarified the Bacteroidaceae, Bifidobacteriaceae, and Lachnospiraceae PacBio and Illumina sequencing results to 28,000 reads. The bash script _rarify.reads.sh_ was used to rarify the sequencing data. The resulting reads can be used with the _GyrB_dada2_analysis.rmd_ script to analyze all rarified reads.
 
